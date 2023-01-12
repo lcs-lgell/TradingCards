@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CustomStruc.swift
 //  TradingCards
 //
 //  Created by Leon Gell on 2023-01-12.
@@ -7,21 +7,42 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CustomStruc: View {
+    //MARK: Stored Properties
+    let teamcolor: String
+    let name: String
+    let playerimage: String
+    let logo: String
+    let number: String
+    let flag: String
+    let GP: String
+    let Goals: String
+    let Assists: String
+    let Points: String
+    let PIM: String
+    let summary: String
+    
+    
+    
+    //MARK: Computed Properties
+    
+    
     var body: some View {
+        
+    
         ScrollView {
             VStack {
                 ZStack {
                     // first color background
-                    Color("DarkBlue")
+                    Color(teamcolor)
                     
                     
                     //Name
                     VStack{
-                        Text("Auston Matthews")
+                        Text(name)
                             .font(Font.custom("HelveticaNeue-Medium", size: 40))
                         //image
-                        Image("Matthews")
+                        Image(playerimage)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 300, height: 400)
@@ -37,7 +58,7 @@ struct ContentView: View {
                     HStack{
                         Spacer()
                             .frame(width: 175)
-                        Image("MapleLeafs")
+                        Image(logo)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200, height: 200)
@@ -50,7 +71,7 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 220)
                            
-                            Text("#34")
+                            Text(number)
                             
                                 .font(Font.custom("HelveticaNeue-Medium", size: 40))
                         }
@@ -67,7 +88,7 @@ struct ContentView: View {
                             .frame(height: 430)
                         HStack{
                             
-                          Image("USA")
+                          Image(flag)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 80, height: 100)
@@ -92,26 +113,26 @@ struct ContentView: View {
                     
                     VStack(alignment: .leading){
                         Text("GP")
-                        Text("500")
+                        Text(GP)
             
                     }
                     VStack(alignment: .leading){
                         Text("Goals")
-                        Text("500")
+                        Text(Goals)
             
                     }
                     VStack(alignment: .leading){
                         Text("Assists")
-                        Text("500")
+                        Text(Assists)
             
                     }
                     VStack(alignment: .leading){
                         Text("Points")
-                        Text("1000")
+                        Text(Points)
                     }
                     VStack(alignment: .leading){
                         Text("PIM")
-                        Text("500")
+                        Text(PIM)
             
                     }
                     
@@ -122,7 +143,7 @@ struct ContentView: View {
                     Text("Accolades")
                         .bold()
                         .padding(.bottom, 5)
-                    Text("He is the best goal scorer of all time BLah blah blah")
+                    Text(summary)
                 }
                 
                 
@@ -133,8 +154,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CustomStruc_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CustomStruc(teamcolor: "DarkBlue", name: "james", playerimage: "Matthews", logo: "MapleLeafs", number: "#34", flag: "USA", GP: "90", Goals: "400", Assists: "300", Points: "700", PIM: "40", summary: "the goat")
     }
 }

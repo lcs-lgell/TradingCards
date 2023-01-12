@@ -11,6 +11,7 @@
 		EE7A30C029706AEA000A6F41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7A30BF29706AEA000A6F41 /* ContentView.swift */; };
 		EE7A30C229706AED000A6F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7A30C129706AED000A6F41 /* Assets.xcassets */; };
 		EE7A30C529706AED000A6F41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7A30C429706AED000A6F41 /* Preview Assets.xcassets */; };
+		EE7A30CE2970BC5E000A6F41 /* CustomStruc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7A30CD2970BC5E000A6F41 /* CustomStruc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		EE7A30BF29706AEA000A6F41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EE7A30C129706AED000A6F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE7A30C429706AED000A6F41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE7A30CD2970BC5E000A6F41 /* CustomStruc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStruc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				EE7A30BD29706AEA000A6F41 /* TradingCardsApp.swift */,
 				EE7A30BF29706AEA000A6F41 /* ContentView.swift */,
+				EE7A30CD2970BC5E000A6F41 /* CustomStruc.swift */,
 				EE7A30C129706AED000A6F41 /* Assets.xcassets */,
 				EE7A30C329706AED000A6F41 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE7A30C029706AEA000A6F41 /* ContentView.swift in Sources */,
+				EE7A30CE2970BC5E000A6F41 /* CustomStruc.swift in Sources */,
 				EE7A30BE29706AEA000A6F41 /* TradingCardsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
