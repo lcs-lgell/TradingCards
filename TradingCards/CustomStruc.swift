@@ -41,14 +41,24 @@ struct CustomStruc: View {
                     VStack{
                         Text(name)
                             .font(Font.custom("HelveticaNeue-Medium", size: 40))
+                        
                         //image
-                        Image(playerimage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 400)
-                    //.background(RoundedRectangle(cornerRadius: 0)
-                                    // Create the shape
-                            //.foregroundColor(Color.white))
+                        ZStack {
+                    
+                            Image(playerimage)
+                            
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 300, height: 400)
+                        
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 25)
+                            
+                        )
+                            
+                            
+                        }
                         
                     }
                     //Logo placement
@@ -69,18 +79,22 @@ struct CustomStruc: View {
                     VStack {
                         HStack {
                             Spacer()
-                                .frame(width: 220)
+                                .frame(width: 210)
                            
                             Text(number)
-                            
                                 .font(Font.custom("HelveticaNeue-Medium", size: 40))
+                                .background(
+                                    Color.white
+                                )
+                                .overlay(
+                                    Rectangle()
+                                        .stroke(Color.white)
+                                )
                         }
                         Spacer()
-                        .frame(height: 290)
+                        .frame(height: 270)
                     }
-                    //.background(RoundedRectangle(cornerRadius: 0)
-                                // Create the shape
-                        //.foregroundColor(Color.white))
+                    
                   
                     //National Country
                     VStack {
@@ -156,6 +170,6 @@ struct CustomStruc: View {
 
 struct CustomStruc_Previews: PreviewProvider {
     static var previews: some View {
-        CustomStruc(teamcolor: "DarkBlue", name: "james", playerimage: "Matthews", logo: "MapleLeafs", number: "#34", flag: "USA", GP: "90", Goals: "400", Assists: "300", Points: "700", PIM: "40", summary: "the goat")
+        CustomStruc(teamcolor: "DarkBlue", name: "Auston Matthews", playerimage: "Matthews", logo: "MapleLeafs", number: "#34", flag: "USA", GP: "90", Goals: "400", Assists: "300", Points: "700", PIM: "40", summary: "the goat")
     }
 }
