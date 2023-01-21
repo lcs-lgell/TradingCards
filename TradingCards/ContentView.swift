@@ -8,26 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //MARK: Stored Properties
+    let CustomStrucShow: CustomStruc
+    
     var body: some View {
         ScrollView {
             VStack {
                 ZStack {
                     // first color background
-                    Color("DarkBlue")
+                    Color(CustomStrucShow.teamcolor)
                     
                     
                     //Name
                     VStack{
-                        Text("Auston Matthews")
+                        Text(CustomStrucShow.name)
                             .font(Font.custom("HelveticaNeue-Medium", size: 40))
+                        
                         //image
-                        Image("Matthews")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 400)
-                    //.background(RoundedRectangle(cornerRadius: 0)
-                                    // Create the shape
-                            //.foregroundColor(Color.white))
+                        ZStack {
+                    
+                            Image(CustomStrucShow.playerimage)
+                            
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 300, height: 400)
+                        
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 25)
+                            
+                        )
+                            
+                            
+                        }
                         
                     }
                     //Logo placement
@@ -37,7 +51,7 @@ struct ContentView: View {
                     HStack{
                         Spacer()
                             .frame(width: 175)
-                        Image("MapleLeafs")
+                        Image(CustomStrucShow.logo)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200, height: 200)
@@ -48,18 +62,22 @@ struct ContentView: View {
                     VStack {
                         HStack {
                             Spacer()
-                                .frame(width: 220)
+                                .frame(width: 210)
                            
-                            Text("#34")
-                            
+                            Text(CustomStrucShow.number)
                                 .font(Font.custom("HelveticaNeue-Medium", size: 40))
+                                .background(
+                                    Color.white
+                                )
+                                .overlay(
+                                    Rectangle()
+                                        .stroke(Color.white)
+                                )
                         }
                         Spacer()
-                        .frame(height: 290)
+                        .frame(height: 270)
                     }
-                    //.background(RoundedRectangle(cornerRadius: 0)
-                                // Create the shape
-                        //.foregroundColor(Color.white))
+                    
                   
                     //National Country
                     VStack {
@@ -67,7 +85,7 @@ struct ContentView: View {
                             .frame(height: 430)
                         HStack{
                             
-                          Image("USA")
+                            Image(CustomStrucShow.flag)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 80, height: 100)
@@ -92,26 +110,26 @@ struct ContentView: View {
                     
                     VStack(alignment: .leading){
                         Text("GP")
-                        Text("500")
+                        Text(CustomStrucShow.GP)
             
                     }
                     VStack(alignment: .leading){
                         Text("Goals")
-                        Text("500")
+                        Text(CustomStrucShow.Goals)
             
                     }
                     VStack(alignment: .leading){
                         Text("Assists")
-                        Text("500")
+                        Text(CustomStrucShow.Assists)
             
                     }
                     VStack(alignment: .leading){
                         Text("Points")
-                        Text("1000")
+                        Text(CustomStrucShow.Points)
                     }
                     VStack(alignment: .leading){
                         Text("PIM")
-                        Text("500")
+                        Text(CustomStrucShow.PIM)
             
                     }
                     
@@ -122,7 +140,7 @@ struct ContentView: View {
                     Text("Accolades")
                         .bold()
                         .padding(.bottom, 5)
-                    Text("He is the best goal scorer of all time BLah blah blah")
+                    Text(CustomStrucShow.summary)
                 }
                 
                 
@@ -135,6 +153,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView{
+          ContentView(CustomStrucShow: matthews)
+        }
     }
 }
