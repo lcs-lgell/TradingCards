@@ -141,6 +141,7 @@ struct ContentView: View {
                         .bold()
                         .padding(.bottom, 5)
                     Text(CustomStrucShow.summary)
+                        .padding()
                 }
                 
                 

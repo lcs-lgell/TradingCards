@@ -9,20 +9,15 @@ import SwiftUI
 // MAKE LIST NEXT
 struct StartPlayersView: View {
     var body: some View {
-        List {
+        
+        List(allplayers) { currentplayer in
+            
             NavigationLink(destination: {
-                ContentView(CustomStrucShow: matthews)
+                ContentView(CustomStrucShow: currentplayer)
             }, label: {
-                Image("Matthews")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50, alignment: .center)
-                VStack(alignment: .leading){
-                    Text("Auston Matthews")
-                    Text("funniest guy there is")
-                        .font(.caption)
-                }
+                Text(currentplayer.name)
             })
+            
             
             
             
@@ -37,7 +32,9 @@ struct StartPlayersView: View {
     
     struct StartPlayersView_Previews: PreviewProvider {
         static var previews: some View {
-            StartPlayersView()
+            NavigationView {
+                StartPlayersView()
+            }
         }
     }
     
